@@ -11,6 +11,7 @@ Welcome to doctall's documentation!
    :caption: Contents:
 
    installation/installation.md
+   doctall
 
 
 Indices and tables
