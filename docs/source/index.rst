@@ -9,7 +9,7 @@ Welcome to doctall's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   ./installation/installation.md
 
 
 Indices and tables
