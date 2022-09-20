@@ -13,7 +13,6 @@ Welcome to doctall's documentation!
    installation/installation.md
    doctall
 
-
 Indices and tables
 ==================
 

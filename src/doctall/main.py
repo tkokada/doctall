@@ -1,7 +1,7 @@
 import sys
 
 
-def _doctall(input_string: str) -> str:
+def docret(input_string: str) -> str:
     """
     Just returns the input string.
 
@@ -15,5 +15,11 @@ def _doctall(input_string: str) -> str:
 
 
 def main() -> None:
+    """
+    Just prints the input string or default string.
+
+    Returns:
+        None: Nothing is returned.
+    """
     input_string = sys.argv[1] if len(sys.argv) > 1 else "Hello, doctall!"
-    print(_doctall(input_string))
+    print(docret(input_string))
