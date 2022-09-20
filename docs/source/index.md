@@ -9,7 +9,7 @@
    :maxdepth: 2
    :caption: Contents:
 
-   installation/installation.md
+   installation/installation
    doctall
    ```
 
