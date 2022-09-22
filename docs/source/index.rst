@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Doctallドキュメント
-=================
+===================
 
 .. toctree::
    :maxdepth: 2
@@ -19,7 +19,7 @@ Doctallドキュメント
    doctall
 
 索引と検索
-========
+==========
 
 * :ref:`genindex`
 * :ref:`modindex`

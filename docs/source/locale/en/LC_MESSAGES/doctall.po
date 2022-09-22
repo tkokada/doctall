@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doctall \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-22 11:28+0900\n"
+"POT-Creation-Date: 2022-09-22 23:27+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../source/doctall.rst:2
+#: ../../source/doctall.rst:2
 msgid "doctall package"
 msgstr ""
 
-#: ../source/doctall.rst:5
+#: ../../source/doctall.rst:5
 msgid "Submodules"
 msgstr ""
 
-#: ../source/doctall.rst:8
+#: ../../source/doctall.rst:8
 msgid "doctall.main module"
 msgstr ""
 
@@ -61,16 +61,7 @@ msgstr ""
 msgid "Nothing is returned."
 msgstr ""
 
-#: ../source/doctall.rst:16
+#: ../../source/doctall.rst:16
 msgid "Module contents"
 msgstr ""
-
-#~ msgid "Parameters"
-#~ msgstr ""
-
-#~ msgid "Returns"
-#~ msgstr ""
-
-#~ msgid "Return type"
-#~ msgstr ""
 
