@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doctall \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-22 23:36+0900\n"
+"POT-Creation-Date: 2022-09-22 23:47+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,4 +64,22 @@ msgstr ""
 #: ../../source/doctall.rst:16
 msgid "Module contents"
 msgstr ""
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+
+#~ msgid "戻り値"
+#~ msgstr ""
+
+#~ msgid "戻り値の型"
+#~ msgstr ""
+
+#~ msgid "Parameters"
+#~ msgstr ""
+
+#~ msgid "Returns"
+#~ msgstr ""
+
+#~ msgid "Return type"
+#~ msgstr ""
 

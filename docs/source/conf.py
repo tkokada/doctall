@@ -43,6 +43,6 @@ source_suffix = {
     '.md': 'markdown'
 }
 
-language = None
+language = "ja"
 locale_dirs = ['locale/']
 gettext_compact = False
