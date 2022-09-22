@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../source/index.rst:9
 msgid "コンテンツ:"
-msgstr "Contents"
+msgstr ""
 
 #: ../../source/index.rst:15
 msgid "コードリファレンス"
-msgstr "Code Reference"
+msgstr ""
 
 #: ../../source/index.rst:7
 msgid "Doctallドキュメント"
