@@ -17,23 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/installation/installation.md:1
-msgid "Installation"
-msgstr "Installation"
-
-#: ../../source/installation/installation.md:2
-msgid "インストール"
-msgstr "Installation"
-
-#: ../../source/installation/installation.md:3
-msgid "doctallのインストールを行います．"
-msgstr "Install doctall"
-
-#: ../../source/installation/installation.md:5
-msgid "設定"
-msgstr "Settings"
-
-#: ../../source/installation/installation.md:6
-msgid "doctallの設定を行います．"
-msgstr "Configure doctall settings."
+#: ../../source/modules.rst:2
+msgid "src"
+msgstr ""
 

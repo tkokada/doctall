@@ -17,23 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/installation/installation.md:1
-msgid "Installation"
-msgstr "Installation"
+#: ../../source/index.rst:9
+msgid "Contents:"
+msgstr ""
 
-#: ../../source/installation/installation.md:2
-msgid "インストール"
-msgstr "Installation"
+#: ../../source/index.rst:7
+msgid "Welcome to doctall's documentation!"
+msgstr ""
 
-#: ../../source/installation/installation.md:3
-msgid "doctallのインストールを行います．"
-msgstr "Install doctall"
+#: ../../source/index.rst:17
+msgid "Indices and tables"
+msgstr ""
 
-#: ../../source/installation/installation.md:5
-msgid "設定"
-msgstr "Settings"
+#: ../../source/index.rst:19
+msgid ":ref:`genindex`"
+msgstr ""
 
-#: ../../source/installation/installation.md:6
-msgid "doctallの設定を行います．"
-msgstr "Configure doctall settings."
+#: ../../source/index.rst:20
+msgid ":ref:`modindex`"
+msgstr ""
+
+#: ../../source/index.rst:21
+msgid ":ref:`search`"
+msgstr ""
 
