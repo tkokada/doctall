@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, Takashi OKADA
+# This file is distributed under the same license as the doctall package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: doctall \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-21 09:20+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/doctall.rst:2
+msgid "doctall package"
+msgstr ""
+
+#: ../../source/doctall.rst:5
+msgid "Submodules"
+msgstr ""
+
+#: ../../source/doctall.rst:8
+msgid "doctall.main module"
+msgstr ""
+
+#: doctall.main.docret:1 of
+msgid "Just returns the input string."
+msgstr ""
+
+#: doctall.main.docret of
+msgid "Parameters"
+msgstr ""
+
+#: doctall.main.docret:3 of
+msgid "An input string."
+msgstr ""
+
+#: doctall.main.docret doctall.main.main of
+msgid "Returns"
+msgstr ""
+
+#: doctall.main.docret:6 of
+msgid "Returns the input string."
+msgstr ""
+
+#: doctall.main.docret doctall.main.main of
+msgid "Return type"
+msgstr ""
+
+#: doctall.main.main:1 of
+msgid "Just prints the input string or default string."
+msgstr ""
+
+#: doctall.main.main:3 of
+msgid "Nothing is returned."
+msgstr ""
+
+#: ../../source/doctall.rst:16
+msgid "Module contents"
+msgstr ""
+

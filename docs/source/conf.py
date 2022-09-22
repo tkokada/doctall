@@ -40,3 +40,6 @@ source_suffix = {
     '.txt': 'markdown',
     '.md': 'markdown'
 }
+
+locale_dirs = ['locale/']
+gettext_compact = False
