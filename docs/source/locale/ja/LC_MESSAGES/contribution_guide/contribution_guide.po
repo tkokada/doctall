@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doctall \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-26 10:49+0900\n"
+"POT-Creation-Date: 2022-09-26 12:11+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,5 +19,21 @@ msgstr ""
 
 #: ../../source/contribution_guide/contribution_guide.md:1
 msgid "コントリビューションガイド"
+msgstr ""
+
+#: ../../source/contribution_guide/contribution_guide.md:3
+msgid "Issues"
+msgstr ""
+
+#: ../../source/contribution_guide/contribution_guide.md:5
+msgid "Pull Request"
+msgstr ""
+
+#: ../../source/contribution_guide/contribution_guide.md:7
+msgid "Test"
+msgstr ""
+
+#: ../../source/contribution_guide/contribution_guide.md:9
+msgid "コーディング規約"
 msgstr ""
 
