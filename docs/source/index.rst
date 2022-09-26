@@ -8,12 +8,18 @@ Doctallドキュメント
 
 .. toctree::
    :maxdepth: 2
-   :caption: コンテンツ:
+   :caption: Installation:
 
    installation/installation.md
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
+   :caption: Examples:
+
+   examples/examples.md
+
+.. toctree::
+   :maxdepth: 2
    :caption: コードリファレンス
 
    doctall

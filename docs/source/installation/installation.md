@@ -1,6 +1,11 @@
-# Installation
-## インストール
+# クイックスタート
 doctallのインストールを行います．
 
-## 設定
-doctallの設定を行います．
+# Windows向けインストールガイド
+doctallのインストールを行います．
+
+# MacOS向けインストールガイド
+doctallのインストールを行います．
+
+# Linux向けインストールガイド
+doctallのインストールを行います．

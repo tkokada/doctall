@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doctall \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-22 23:36+0900\n"
+"POT-Creation-Date: 2022-09-26 10:36+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,14 @@ msgstr ""
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/index.rst:9
-msgid "コンテンツ:"
-msgstr "Contents"
+msgid "Installation:"
+msgstr ""
 
 #: ../../source/index.rst:15
+msgid "Examples:"
+msgstr ""
+
+#: ../../source/index.rst:21
 msgid "コードリファレンス"
 msgstr "Code Reference"
 
@@ -29,19 +33,22 @@ msgstr "Code Reference"
 msgid "Doctallドキュメント"
 msgstr ""
 
-#: ../../source/index.rst:22
+#: ../../source/index.rst:28
 msgid "索引と検索"
 msgstr ""
 
-#: ../../source/index.rst:24
+#: ../../source/index.rst:30
 msgid ":ref:`genindex`"
 msgstr ""
 
-#: ../../source/index.rst:25
+#: ../../source/index.rst:31
 msgid ":ref:`modindex`"
 msgstr ""
 
-#: ../../source/index.rst:26
+#: ../../source/index.rst:32
 msgid ":ref:`search`"
 msgstr ""
+
+#~ msgid "コンテンツ:"
+#~ msgstr "Contents"
 
