@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doctall \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-26 12:11+0900\n"
+"POT-Creation-Date: 2022-09-26 12:45+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,26 +18,19 @@ msgstr ""
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/installation/installation.md:1
+msgid "Linux向けインストールガイド"
+msgstr ""
+
+#: ../../source/installation/installation.md:3
 msgid "ABCIでのインストールガイド"
 msgstr ""
 
-#: ../../source/installation/installation.md:2
 #: ../../source/installation/installation.md:5
-#: ../../source/installation/installation.md:8
-#: ../../source/installation/installation.md:11
-msgid "doctallのインストールを行います．"
-msgstr ""
-
-#: ../../source/installation/installation.md:4
 msgid "Windows向けインストールガイド"
 msgstr ""
 
 #: ../../source/installation/installation.md:7
 msgid "MacOS向けインストールガイド"
-msgstr ""
-
-#: ../../source/installation/installation.md:10
-msgid "Linux向けインストールガイド"
 msgstr ""
 
 #~ msgid "Installation"
@@ -53,5 +46,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "クイックスタート"
+#~ msgstr ""
+
+#~ msgid "doctallのインストールを行います．"
 #~ msgstr ""
 

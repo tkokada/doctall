@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doctall \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-26 10:49+0900\n"
+"POT-Creation-Date: 2022-09-26 12:45+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,31 +18,31 @@ msgstr ""
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/index.rst:9
-msgid "Overview:"
+msgid "オーバービュー:"
 msgstr ""
 
 #: ../../source/index.rst:15
-msgid "Installation:"
+msgid "インストール:"
 msgstr ""
 
 #: ../../source/index.rst:21
-msgid "Examples:"
+msgid "利用例:"
 msgstr ""
 
 #: ../../source/index.rst:27
-msgid "User Guide:"
+msgid "ユーザーガイド:"
 msgstr ""
 
 #: ../../source/index.rst:34
-msgid "Developer Guide:"
+msgid "ディベロッパーガイド:"
 msgstr ""
 
 #: ../../source/index.rst:41
-msgid "Contribution Guide:"
+msgid "コントリビューションガイド:"
 msgstr ""
 
 #: ../../source/index.rst:47
-msgid "Reference:"
+msgid "リファレンス:"
 msgstr ""
 
 #: ../../source/index.rst:53
@@ -70,5 +70,26 @@ msgid ":ref:`search`"
 msgstr ""
 
 #~ msgid "コンテンツ:"
+#~ msgstr ""
+
+#~ msgid "Overview:"
+#~ msgstr ""
+
+#~ msgid "Installation:"
+#~ msgstr ""
+
+#~ msgid "Examples:"
+#~ msgstr ""
+
+#~ msgid "User Guide:"
+#~ msgstr ""
+
+#~ msgid "Developer Guide:"
+#~ msgstr ""
+
+#~ msgid "Contribution Guide:"
+#~ msgstr ""
+
+#~ msgid "Reference:"
 #~ msgstr ""
 

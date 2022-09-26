@@ -8,45 +8,45 @@ Doctallドキュメント
 
 .. toctree::
    :maxdepth: 2
-   :caption: Overview:
+   :caption: オーバービュー:
 
    overview/overview.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: Installation:
+   :caption: インストール:
 
    installation/installation.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: Examples:
+   :caption: 利用例:
 
    examples/examples.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: User Guide:
+   :caption: ユーザーガイド:
 
    user_guide/basic_usage.md
    user_guide/configration_setting.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: Developer Guide:
+   :caption: ディベロッパーガイド:
 
    developer_guide/architecture.md
    developer_guide/custom_optimizer.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contribution Guide:
+   :caption: コントリビューションガイド:
 
    contribution_guide/contribution_guide.md
 
 .. toctree::
    :maxdepth: 2
-   :caption: Reference:
+   :caption: リファレンス:
 
    references/references.md
 
