@@ -29,7 +29,7 @@ Doctallドキュメント
    :caption: ユーザーガイド:
 
    user_guide/basic_usage.md
-   user_guide/configration_setting.md
+   user_guide/configuration_setting.md
 
 .. toctree::
    :maxdepth: 2
@@ -62,3 +62,8 @@ Doctallドキュメント
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+謝辞
+====
+* この成果の一部は、国立研究開発法人新エネルギー・産業技術総合開発機構(NEDO)の委託業務として開発されたものです。
+* TPEアルゴリズムは Optuna を利用しました。

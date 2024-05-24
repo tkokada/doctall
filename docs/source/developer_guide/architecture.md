@@ -1,1 +1,1 @@
-# aiaccelアーキテクチャ
+# aiaccelアーキテクチャ(WIP)
