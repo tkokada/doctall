@@ -21,6 +21,7 @@ author = "Takashi OKADA"
 
 extensions = [
     "sphinx.ext.autodoc",
+    "sphinx.ext.githubpages",
     "sphinx.ext.napoleon",
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
