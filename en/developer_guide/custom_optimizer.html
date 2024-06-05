@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>カスタムオプティマイザー作成ガイド(WIP:based on Aramoto) &mdash; doctall  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="イシュー(WIP)" href="../contribution_guide/contribution_guide.html" />
+    <link rel="prev" title="aiaccelアーキテクチャ(WIP)" href="architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> doctall
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">オーバービュー:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">aiaccel概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html#id1">クイックインストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html#id2">実行例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html#wd">開発中の機能wdについて</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">インストール:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Linux向けインストールガイド(WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html#abci-wip">ABCIでのインストールガイド(WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html#windows-wip">Windows向けインストールガイド(WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html#macos-wip">MacOS向けインストールガイド(WIP)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">利用例:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Sphere関数最適化の例(WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html#resnet50-wip">ResNet50の最適化の例(WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html#schwefel-wip">Schwefel関数最適化の例(WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html#styblinkski-tang-wip">Styblinkski-Tang関数最適化の例(WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html#wip">ベンチマーク関数最適化の例(WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html#id1">ラッパー関数作成の例(WIP)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ユーザーガイド:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/basic_usage.html">基本的な使い方(WIP: based on Aramoto)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/configuration_setting.html">コンフィグレーションの設定ガイド(WIP)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ディベロッパーガイド:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">aiaccelアーキテクチャ(WIP)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">カスタムオプティマイザー作成ガイド(WIP:based on Aramoto)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#new-create">New create</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">コントリビューションガイド:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution_guide/contribution_guide.html">イシュー(WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribution_guide/contribution_guide.html#id1">プルリクエスト(WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribution_guide/contribution_guide.html#id2">テスト(WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribution_guide/contribution_guide.html#id3">コーディング規約(WIP)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">リファレンス:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">参考文献(WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html#id1">参照(WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html#id2">引用(WIP)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doctall.html">doctall package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">doctall</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <div>
+        <select name="lang" onchange="location.href=value;">
+            <option value="../../ja/developer_guide/custom_optimizer.html"
+            >Japanese</option>
+            <option value="../../en/developer_guide/custom_optimizer.html"
+                selected
+            >English</option>
+        </select>
+      </div>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">カスタムオプティマイザー作成ガイド(WIP:based on Aramoto)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/developer_guide/custom_optimizer.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="wip-based-on-aramoto">
+<h1>カスタムオプティマイザー作成ガイド(WIP:based on Aramoto)<a class="headerlink" href="#wip-based-on-aramoto" title="Permalink to this heading"></a></h1>
+<p>(WIP:下書き以前の状態)オプティマイザを追加する手順について</p>
+<ol class="arabic simple">
+<li><p>場所
+aiaccel/optimizerに新しくディレクトリを作成する.
+デイレクトリの名前はオプティマイザの名前</p></li>
+<li><p>ファイルの構成
+「<strong>init</strong>.py」「search.py」を作成する.
+__init__pyは無記述</p></li>
+<li><p>AbstractOptimizerの継承</p></li>
+</ol>
+<p><strong>search.py</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiaccel.optimizer.abstract_optimizer</span> <span class="kn">import</span> <span class="n">AbstractOptimizer</span>
+
+
+<span class="k">class</span> <span class="nc">MyOptimizer</span><span class="p">(</span><span class="n">AbstractOptimizer</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+
+        <span class="c1"># write your code here</span>
+
+    <span class="k">def</span> <span class="nf">pre_process</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">pre_process</span><span class="p">()</span>
+
+        <span class="c1"># write your code here</span>
+
+    <span class="k">def</span> <span class="nf">generate_parameter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="c1"># write your code here</span>
+
+    <span class="k">def</span> <span class="nf">_serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">serialize_datas</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;param&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_serialize</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_deserialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dict_objects</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_deserialize</span><span class="p">(</span><span class="n">dict_objects</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">=</span> <span class="n">dict_objects</span><span class="p">[</span><span class="s1">&#39;param&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>aiaccel/commons.py
+search_algorithm_myoptimizer = ‘myoptimizer’
+myoptimizerは任意の名前</p></li>
+<li><p>aiaccel/config.py</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hps_format_check</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">algorithm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_algorithm</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="n">hyperparameters</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hyperparameters</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">hyperparameters</span> <span class="o">==</span> <span class="p">[]:</span>
+        <span class="n">Terminal</span><span class="p">()</span><span class="o">.</span><span class="n">print_error</span><span class="p">(</span><span class="s2">&quot;&#39;hyperparameters&#39; are empty.&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+    <span class="c1"># === item check (individual)===</span>
+    <span class="k">if</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">search_algorithm_random</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_random_setting_format</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="n">hyperparameters</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">search_algorithm_grid</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_grid_setting_format</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="n">hyperparameters</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">search_algorithm_sobol</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_sobol_setting_format</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="n">hyperparameters</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">search_algorithm_nelder_mead</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_neldermead_setting_format</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="n">hyperparameters</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">search_algorithm_tpe</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_tpe_setting_format</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="n">hyperparameters</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">search_algorithm_myoptimizer</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_myoptimizer_setting_format</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="n">hyperparameters</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Terminal</span><span class="p">()</span><span class="o">.</span><span class="n">print_error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;algorithm: </span><span class="si">{</span><span class="n">algorithm</span><span class="si">}</span><span class="s2"> is not suportted.&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="new-create">
+<h2>New create<a class="headerlink" href="#new-create" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_check_myoptimizer_setting_format</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">algorithm</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">hyperparameters</span><span class="p">:</span> <span class="nb">list</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+    <span class="n">hp_types</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;uniform_float&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;uniform_int&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;categorical&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ordinal&#39;</span>
+    <span class="p">]</span>
+    <span class="n">fmt</span> <span class="o">=</span> <span class="n">FormatChecker</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="n">hp_types</span><span class="p">,</span> <span class="n">hyperparameters</span><span class="p">)</span>
+
+    <span class="c1"># int, float</span>
+    <span class="n">necessary_items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;lower&quot;</span><span class="p">,</span> <span class="s2">&quot;upper&quot;</span><span class="p">]</span>
+    <span class="n">optional_items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;initial&quot;</span><span class="p">,</span> <span class="s2">&quot;comment&quot;</span><span class="p">]</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">check_uniform_int</span><span class="p">(</span><span class="n">necessary_items</span><span class="p">,</span> <span class="n">optional_items</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">check_uniform_float</span><span class="p">(</span><span class="n">necessary_items</span><span class="p">,</span> <span class="n">optional_items</span><span class="p">)</span>
+
+    <span class="c1"># categorical</span>
+    <span class="n">necessary_items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;choices&quot;</span><span class="p">]</span>
+    <span class="n">optional_items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;initial&quot;</span><span class="p">,</span> <span class="s2">&quot;comment&quot;</span><span class="p">]</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">check_categorical</span><span class="p">(</span><span class="n">necessary_items</span><span class="p">,</span> <span class="n">optional_items</span><span class="p">)</span>
+
+    <span class="c1"># ordinal</span>
+    <span class="n">necessary_items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;lower&quot;</span><span class="p">,</span> <span class="s2">&quot;upper&quot;</span><span class="p">,</span> <span class="s2">&quot;sequence&quot;</span><span class="p">]</span>
+    <span class="n">optional_items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;initial&quot;</span><span class="p">,</span> <span class="s2">&quot;comment&quot;</span><span class="p">]</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">check_ordinal</span><span class="p">(</span><span class="n">necessary_items</span><span class="p">,</span> <span class="n">optional_items</span><span class="p">)</span>
+
+    <span class="c1"># initial check</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">check_initial_type</span><span class="p">([</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>不要ならば．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_check_myoptimizer_setting_format</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">algorithm</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">hyperparameters</span><span class="p">:</span> <span class="nb">list</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>aiaccel/<strong>init</strong>.py</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.common</span> <span class="kn">import</span> <span class="n">search_algorithm_myoptimizer</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span><span class="p">,</span>
+    <span class="n">search_algorithm_grid</span><span class="p">,</span>
+    <span class="n">search_algorithm_nelder_mead</span><span class="p">,</span>
+    <span class="n">search_algorithm_random</span><span class="p">,</span>
+    <span class="n">search_algorithm_sobol</span><span class="p">,</span>
+    <span class="n">search_algorithm_tpe</span><span class="p">,</span>
+    <span class="n">search_algorithm_myoptimizer</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>start.py</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CreationOptimizer</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span><span class="n">config_path</span><span class="p">)</span>
+        <span class="n">algorithm</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">search_algorithm</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+        <span class="c1"># grid search</span>
+        <span class="k">if</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">aiaccel</span><span class="o">.</span><span class="n">search_algorithm_grid</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">GridSearchOptimizer</span>
+
+        <span class="c1"># nelder-mead search</span>
+        <span class="k">elif</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">aiaccel</span><span class="o">.</span><span class="n">search_algorithm_nelder_mead</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">NelderMeadSearchOptimizer</span>
+
+        <span class="c1"># ramdom search</span>
+        <span class="k">elif</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">aiaccel</span><span class="o">.</span><span class="n">search_algorithm_random</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">RandomSearchOptimizer</span>
+
+        <span class="c1"># sobol search</span>
+        <span class="k">elif</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">aiaccel</span><span class="o">.</span><span class="n">search_algorithm_sobol</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">SobolSearchOptimizer</span>
+
+        <span class="c1"># tpe search</span>
+        <span class="k">elif</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">aiaccel</span><span class="o">.</span><span class="n">search_algorithm_tpe</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">TpeSearchOptimizer</span>
+
+        <span class="c1"># other (error)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>再インストール</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>setup.py<span class="w"> </span>install
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="architecture.html" class="btn btn-neutral float-left" title="aiaccelアーキテクチャ(WIP)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../contribution_guide/contribution_guide.html" class="btn btn-neutral float-right" title="イシュー(WIP)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Takashi OKADA.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
