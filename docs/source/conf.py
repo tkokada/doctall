@@ -30,16 +30,22 @@ extensions = [
 ]
 
 templates_path = ["_templates"]
-exclude_patterns = []
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "sphinx_rtd_theme"
-# html_static_path = ['_static']
+# html_static_path = ["_static"]
 html_sidebars = {"**": ["search-field", "sidebar-nav-bs", "sidebar-ethical-ads"]}
 source_suffix = {".rst": "restructuredtext", ".txt": "markdown", ".md": "markdown"}
+html_context = {
+    "support_languages": {
+        "ja": "Japanese",
+        "en": "English",
+    }
+}
 
 language = "ja"
 locale_dirs = ["locale/"]
